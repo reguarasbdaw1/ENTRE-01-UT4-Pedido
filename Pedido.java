@@ -16,21 +16,25 @@ public class Pedido
     /**
      * Constructor  
      */
-    public Pedido()    {
-         
+    public Pedido(Fecha fecha,Cliente cliente,LineaPedido linea1,LineaPedido linea2)  
+    {
+      this.fecha = fecha;
+      this.cliente = cliente;
+      this.linea1 = linea1;
+      this.linea2 = linea2;
     }
 
     /**
      * accesor para la fecha del pedido
      */
-    public   getFecha() {
+    public Fecha getFecha() {
          
     }
 
     /**
      * accesor para el cliente
      */
-    public   getCliente() {
+    public Cliente getCliente() {
          
     }
     
@@ -38,22 +42,32 @@ public class Pedido
     /**
      * calcular y devolver el importe total del pedido sin Iva
      */
-    public   getImporteAntesIva() {
-         
+    public double getImporteAntesIva() 
+    {
+        Producto producto = linea1.getProducto();
+        Producto producto2 = linea2.getProducto();
+        double precio = producto.getPrecio();
+        double precio2 = producto2.getPrecio();
+        double total = precio + precio2;
+        return total;
+            
     }
 
     /**
      * calcular y devolver el iva a aplicar
      */
-    public   getIva() {
-         
+    public double getIva()
+    {
+          double elIVA = getImporteAntesIva()* IVA;
+          return elIVA;
     }
 
     /**
      * calcular y devolver el importe total del pedido con Iva
      */
-    public   getImporteTotal() {
-         
+    public double getImporteTotal() 
+    {
+         return getIva() + getImporteAntesIva();
     }
 
     /**
@@ -69,14 +83,16 @@ public class Pedido
      * devuelve true si el pedido actual es más antiguo que el recibido 
      * como parámetro
      */
-    public boolean masAntiguoQue(Pedido otro) {
-         
+    public boolean masAntiguoQue(Pedido otro) 
+    {
+          return fecha.antesQue(fecha);
     }
     
      /**
      * devuelve una referencia al pedido actual
      */
-    public    getPedidoActual() {
+    public  Pedido getPedidoActual() 
+    {
         
     }
 

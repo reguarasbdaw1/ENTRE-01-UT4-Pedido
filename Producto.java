@@ -32,15 +32,17 @@ public class Producto
     /**
      * obtiene un nuevo producto copia idéntica del actual
      */
-    public         obtenerCopia() {
-         
+    public Producto obtenerCopia() 
+    {
+       return new   Producto(nombre,precio);
     }
 
     /**
      * Representación textual de un producto
      * (ver enunciado)
      */
-    public String toString() {
+    public String toString() 
+    {
         
     }
 

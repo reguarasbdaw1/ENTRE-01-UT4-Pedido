@@ -51,15 +51,18 @@ public class Cliente
     /**
      * representación textual del cliente
      */
-    public String toString() {
-         
+    public String toString() 
+    {
+          return "Nombre:%-10s " + nombre;
+                 
           
     }
     
     /**
      * 
      */
-    public void print() {
+    public void print() 
+    {
         System.out.println(this.toString());
     }
 
