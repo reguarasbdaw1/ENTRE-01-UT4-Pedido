@@ -27,15 +27,17 @@ public class Pedido
     /**
      * accesor para la fecha del pedido
      */
-    public Fecha getFecha() {
-         
+    public Fecha getFecha() 
+    {
+         return fecha;
     }
 
     /**
      * accesor para el cliente
      */
-    public Cliente getCliente() {
-         
+    public Cliente getCliente()
+    {
+         return cliente;
     }
     
     
@@ -74,8 +76,10 @@ public class Pedido
      * Representación textual del pedido
      * (ver enunciado)
      */
-    public String toString() {
-        
+    public String toString()
+    {
+        String str  = String.format("DATOS DEL CLIENTE", cliente.toString());
+        return str;
     }
     
     

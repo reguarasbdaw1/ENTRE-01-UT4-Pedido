@@ -47,7 +47,9 @@ public class LineaPedido
      * Representación textual de la línea de pedido
      * (ver enunciado)
      */
-    public String toString() {
-        
+    public String toString() 
+    {
+        String str = String.format("");
+        return str;
     }
 }

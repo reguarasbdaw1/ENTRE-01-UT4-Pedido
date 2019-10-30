@@ -43,7 +43,9 @@ public class Producto
      */
     public String toString() 
     {
+        String str = String.format("%30s %8,2d unidad", nombre, precio);
         
+        return str;
     }
 
 }
